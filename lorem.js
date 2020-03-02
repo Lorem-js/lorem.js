@@ -12,7 +12,7 @@ function random(items) {
 	return items[Math.floor(Math.random() * items.length)];
 }
 
-var z = "Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est"
+var z = "Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam voluptua at vero eos et accusam et justo duo dolores et ea rebum stet clita kasd gubergren no sea takimata sanctus est";
 //45 words
 
 var words = z.split(" ");
@@ -31,9 +31,19 @@ for (k = 0; k < x; k++) {
 	var ipsum = parseInt(a, 10);
 	//how many words needed
 
-	for (j = 0; j < ipsum; j++) {
-		sentence = sentence + words[j] + " ";
+	if (ipsum <= 45) {
+		for (j = 0; j < ipsum; j++) {
+			sentence = sentence + words[j] + " ";
+		}
+	} else {
+		while (ipsum != 0) {
+			for (j = 0; j < ipsum; j++) {
+				sentence = sentence + words[j] + " ";
+			}
+			ipsum = ipsum - 45;
+		}
 	}
+
 	console.log(sentence);
 
 
